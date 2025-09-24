@@ -1,1 +1,1 @@
-to use Copilot to automate infrastructure, CI/CD, and monitoring as part of a complete DevOps workflow a
+to use Copilot to automate infrastructure, CI/CD, and monitoring as part of a complete DevOps workflow ab
