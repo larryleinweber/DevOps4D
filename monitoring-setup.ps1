@@ -14,6 +14,9 @@ az monitor action-group create `
   --short-name $actionGroupShortName `
   --action email admin $emailRecipient
 
+# Get Action Group Resource ID
+$actionGroupId = "/subscriptions/$(az account show --query id -o tsv)/resourceGroups/$resourceGroup/providers/Microsoft.Insights/actionGroups/$actionGroupName"
+
 # Create CPU Percentage Alert Rule
 az monitor metrics alert create `
   --name $alertRuleName `
@@ -24,5 +27,4 @@ az monitor metrics alert create `
   --severity 2 `
   --evaluation-frequency "PT5M" `
   --window-size "PT5M" `
-  --action-group $actionGroupName `
-  --location $location
+  --action $actionGroupId
